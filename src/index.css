@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-handwriting {
+    font-family: 'Caveat', cursive, sans-serif;
+  }
+  .font-romantic {
+    font-family: 'Dancing Script', cursive, sans-serif;
+  }
+  .font-body {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(244, 63, 94, 0.7)) drop-shadow(0 0 35px rgba(217, 70, 239, 0.4));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(244, 63, 94, 0.9)) drop-shadow(0 0 50px rgba(217, 70, 239, 0.7));
+    transform: scale(1.05);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(4deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes candleFlicker {
+  0%, 100% {
+    transform: scale(1) skewX(0deg);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scale(1.08, 0.92) skewX(2deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95, 1.05) skewX(-2deg);
+    opacity: 0.88;
+  }
+  75% {
+    transform: scale(1.03, 0.97) skewX(1deg);
+    opacity: 0.98;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.8s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-flicker {
+  animation: candleFlicker 0.45s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
